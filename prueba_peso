@@ -1,0 +1,53 @@
+def BOING747():
+	total = 0
+	tabla_indice = []
+	tabla_valor = []
+	capacidad_maxima = 0
+	promedio = 0
+	valor_total = 0
+	while(capacidad_maxima<18000):        
+		menu = int(input("1- Ingresar bulto\n2- Salir\n:"))
+		
+		if (menu == 1):
+			total+=1
+			
+			peso = int(input("Ingrese peso de bulto: "))
+			if (peso > 0 and peso <= 25):
+				valor = peso*0
+				valor_total = valor_total+valor
+				tabla_indice.append(total)
+				tabla_valor.append(peso)
+				promedio = promedio + peso
+				capacidad_maxima = capacidad_maxima + peso
+			elif(peso>26 and peso <= 300):
+				valor = peso*1500
+				tabla_indice.append(total)
+				valor_total = valor_total+valor
+				tabla_valor.append(peso)
+				promedio = promedio + peso
+				capacidad_maxima = capacidad_maxima + peso
+			elif(peso>301 and peso <= 500):            
+				valor = peso*2500
+				tabla_indice.append(total)
+				valor_total = valor_total+valor
+				tabla_valor.append(peso)
+				promedio = promedio + peso
+				capacidad_maxima = capacidad_maxima + peso 
+			else:
+				break
+		else:
+			break
+
+		total_promedio=promedio/len(tabla_valor)
+	max_pesado=max(tabla_valor)
+	valor_dolar = valor_total/3500
+	return total, total_promedio, max_pesado, valor_total, valor_dolar, tabla_valor
+
+numero_total, total_promedio, max_pesado, valor_total, valor_dolar, tabla_valor = BOING747()
+  
+print (numero_total)
+print(total_promedio)
+print (max_pesado)
+print (valor_total)
+print (valor_dolar)
+print (tabla_valor)
