@@ -1,0 +1,12 @@
+def pasaje(kilometros, dias):
+	if kilometros > 1000 and dias > 10:
+		valor = kilometros*35
+		descuento = (valor*30)/100
+		valor = valor - descuento 
+	else:
+		valor = kilometros*35
+	return valor
+
+
+pagar = pasaje (3000, 8)
+print(pagar)
